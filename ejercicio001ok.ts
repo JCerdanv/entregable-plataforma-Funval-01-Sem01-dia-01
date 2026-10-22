@@ -242,26 +242,129 @@ console.log(
 //    - Si sigue vivo
 //    - Si está en alerta de peligro
 
-/*
-// ejec 01
+// Desarrollo
+
+// ejerc 01
 let nombreUsuario: string = 'AlexCode';
 let seguidores: number = 250;
 let cuentaVerificada: boolean = true;
 console.log(
   "Usuario " + nombreUsuario + " Seguidores " + seguidores + " Cuenta Verificada " + cuentaVerificada
 );
-*/
 
-// ✍️ Escribe tu código aquí 👇
+// ejerc 02: Calculadora de propinas simple
+let montoCuenta: number = 80;
+let porcentajePropina : number = 0.15; 
+let montoPropina: number = ( montoCuenta * porcentajePropina );
+let totalPagar: number = ( montoCuenta + montoPropina );
 
-let systemName: string = "LogSystem";
-let version: number = 10.3;
-let userName: string = "JCerdan";
+console.log( "    Monto de cuenta S/" + montoCuenta ); 
+console.log( "    Propina " + porcentajePropina * 100 + "%     S/" + montoPropina );
+console.log( "*** Monto total     S/" + totalPagar + " soles ***");
 
-console.log( "==================================");
-console.log( "  Nombre del sistema  " + systemName + " v" + version);
-console.log( "  ¡Bienvenido, [" + userName + "]!");
-console.log( "==================================");
+// ejerc 03: El contador de visitas (Incremento y Decremento)
+let nombrUsuario: string = 'JCerdan';
+let visitasWeb: number = 10;
+visitasWeb++;
+visitasWeb--;
+console.log( nombrUsuario + "    visitas " + visitasWeb ); 
 
-// 🚫 No eliminar las líneas de abajo ⬇️
 
+// ejerc 04: Actualización compuesta de inventario 
+let nombrProduc: string = 'Sillas';
+let stockProductos: number = 50;
+stockProductos += 20;   
+stockProductos -=  8;   
+console.log( " Stock de producto: " + nombrProduc + " Stock final: " + stockProductos ); 
+
+// ejerc 05: Detector de números pares (Módulo / Residuo)
+let numeroEvaluado: number = 43;
+let esPar: boolean = true;
+esPar = numeroEvaluado % 2 === 0;   
+
+console.log( " No. evaluado: " + numeroEvaluado + " es par?: " + esPar ); 
+
+// ejerc 06: Validador de mayoría de edad y permiso
+let edadCliente: number = 16;
+let tienePermisoPadres: boolean = true;
+let puedeIngresar: boolean;
+puedeIngresar = tienePermisoPadres || (edadCliente >=18);   
+
+console.log( " Edad Cliente: " + edadCliente + " *** Permiso padres?: " + tienePermisoPadres); 
+console.log( " Ingresa si edad >= 18 años o Permiso de padres. Ingresa?: " + puedeIngresar); 
+
+
+// ejerc 07: Acceso a cajero automático (Operador AND estricto)
+let pinIngresado: number = 1234;
+let pinCorrecto: number = 1234;
+let tarjetaBloqueada: boolean = false;
+let accesoPermitido: boolean = (pinIngresado === pinCorrecto) && !(tarjetaBloqueada);
+
+console.log( " pinIngresado: " + pinIngresado + " *** pin Correcto: " + pinCorrecto); 
+console.log( " tarjeta bloqueada: " + tarjetaBloqueada + " *** acceso permitido: " + accesoPermitido); 
+
+// ejerc 08: Rango de temperatura operativa
+let temperaturaActual: number = 24                                                                                          ;
+let climaAceptable: boolean = (temperaturaActual >= 18) && (temperaturaActual < 30);
+
+console.log( " Temperatura: " + temperaturaActual + " *** Clima aceptable?: " + climaAceptable); 
+
+// ejerc 09: Carrito con envío gratis
+let totalCarrito: number = 120;
+let esMiembroPrime: boolean = false;
+let aplicaEnvioGratis: boolean = (totalCarrito >= 100) || esMiembroPrime;
+
+console.log( " Total carrito: " + totalCarrito + " *** MiembroPrime?: " + esMiembroPrime); 
+console.log( " Nota: Envio es gratis si Total >= 100 o es MiembroPrime. Aplica envio gratis?: " + aplicaEnvioGratis); 
+
+// ejerc 10: Validación de formulario de registro
+let longitudPassword: number = 8;
+let aceptoTerminos: boolean = true;
+let tieneEmailInvalido: boolean = false;
+let formularioValido: boolean;
+formularioValido = (longitudPassword >= 8) && aceptoTerminos && !(tieneEmailInvalido)
+
+console.log( "Longitud Password: " + longitudPassword + "  *** Acepto Terminos?: " + aceptoTerminos + "  *** EmailInvalido?:" + tieneEmailInvalido);
+console.log( "Longitud contraseña >= 8 y Aceptó terminos y No tiene Email Invalidos. FormaValido?: " + formularioValido); 
+
+
+/* ==========================================================================
+   RETO INTEGRADOR: Batalla por Turnos (Primera Clase TypeScript)
+   
+   Instrucciones:
+   Escribe el código necesario debajo de cada indicación respetando
+   el tipado explícito (number, boolean, string) y los operadores requeridos.
+   ========================================================================== */
+
+// 1. Declara la variable 'puntosDeVida' de tipo number con un valor inicial de 100.
+//    (Usa 'let' ya que su valor cambiará a lo largo del combate).
+
+// 2. Declara la variable 'tieneEscudo' de tipo boolean con el valor true.
+
+// 3. ¡Ataque enemigo! Resta 25 puntos de vida usando el operador de autoasignación '-='.
+
+// 4. El personaje toma una poción mínima: incrementa 'puntosDeVida' en 1 usando '++'.
+
+// 5. Declara una variable 'sigueVivo' de tipo boolean que evalúe si 'puntosDeVida' es mayor que 0.
+
+// 6. Declara una variable 'alertaPeligro' de tipo boolean.
+//    Debe ser true solo si 'puntosDeVida' es menor a 50 Y el jugador NO tiene escudo (usa && y !).
+
+// 7. Imprime en consola todos los resultados para verificar el estado final del jugador:
+//    - Puntos de vida actuales
+//    - Si tiene escudo activo
+//    - Si sigue vivo
+//    - Si está en alerta de peligro
+
+
+let puntosDeVida: number = 100;
+let tieneEscudo: boolean = true;
+puntosDeVida -= 25; // ¡Ataque enemigo! Resta 25 puntos de vida 
+puntosDeVida++;      // incrementa 'puntosDeVida' en 1 
+let sigueVivo: boolean = (puntosDeVida > 0);
+let alertaPeligro: boolean 
+alertaPeligro = puntosDeVida < 50 && !(tieneEscudo);
+console.log( "Puntos de vida: " + puntosDeVida );
+console.log( "Escudo activo: " + tieneEscudo );
+console.log( "Sigue vivo?: " + sigueVivo );
+console.log( "Alerta Peligro?: " + alertaPeligro );
